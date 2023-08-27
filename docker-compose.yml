@@ -13,7 +13,7 @@ volumes:
 
 services:
   db:
-    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: db-sqlserver
     networks:
       - app-network-public
@@ -28,4 +28,4 @@ services:
       - sqldata:/var/opt/sqlserver/data
       - sqllog:/var/opt/sqlserver/log
       - sqlbackup:/var/opt/sqlserver/backup
-      - /c/docker/shared:/usr/shared
+      - ./c/docker/shared:/usr/shared
